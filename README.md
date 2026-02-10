@@ -1,1 +1,76 @@
-Skin Cancer Detection 📋 OverviewThis project implements a deep learning pipeline designed to assist in the early detection of skin cancer. By utilizing a Convolutional Neural Network (CNN), the system analyzes dermatoscopic images of moles to extract visual features and identify patterns indicative of malignancy.🛠 Tech Stack & ToolsCore FrameworksPython: The primary programming language.Keras / TensorFlow: Used for building, compiling, and training the CNN models.OpenCV: Utilized for high-performance image preprocessing, including noise reduction and normalization.Development EnvironmentsGoogle Colab: Used for model training leveraging cloud GPUs.VS Code: Used for local script development, debugging, and modularizing the pipeline.📊 Dataset ReferenceThe model is trained and validated using datasets hosted on Kaggle, typically utilizing the HAM10000 ("Human Against Machine with 10000 training images") or the ISIC (International Skin Imaging Collaboration) archives.Source: Kaggle Skin Cancer MNIST: HAM10000Description: A large collection of multi-source dermatoscopic images of common pigmented skin lesions.⚙️ How It Works1. Preprocessing (OpenCV)Before the images enter the neural network, they undergo several transformations:Resizing: Scaling images to a standard input size (e.g., $224 \times 224$ pixels).Color Correction: Ensuring consistent lighting and color profiles across different camera sources.Augmentation: Applying random rotations and flips to make the model invariant to image orientation.2. CNN ArchitectureThe integrated neural network consists of:Convolutional Layers: To extract spatial features like lesion borders and asymmetry.Pooling Layers: To down-sample the data and reduce computational load.Softmax Output: To provide a probability distribution across classes (e.g., Benign vs. Malignant).🚦 Execution GuideRunning on Google ColabUpload the .ipynb notebook to your Drive.Enable GPU acceleration: Runtime > Change runtime type > Hardware accelerator > GPU.Authenticate with Kaggle to download the dataset directly into the environment.Running on VS CodeClone the repository and install dependencies: pip install -r requirements.txt.Ensure you have the Python Extension and Jupyter Extension installed.Run main.py or the provided notebook locally.📚 ReferencesKeras Documentation: https://keras.io/OpenCV-Python Tutorials: https://docs.opencv.org/Research Inspiration: Esteva, A., et al. "Dermatologist-level classification of skin cancer with deep neural networks." Nature (2017).⚠️ DisclaimerThis project is for educational purposes only. It is not a medical diagnostic tool. Results should always be verified by a board-certified dermatologist.
+# Skin Cancer Detection using CNN & OpenCV
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Keras](https://img.shields.io/badge/Keras-2.0%20+-red)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.0%20+-green)
+![Kaggle](https://img.shields.io/badge/Data-Kaggle-lightblue)
+
+## 📋 Overview
+This project develops an automated image classification pipeline to assist in the identification of skin cancer. By utilizing a **Convolutional Neural Network (CNN)**, the system analyzes dermatoscopic images of moles to extract visual features—such as border irregularity and color variegation—indicative of potential malignancy.
+
+
+
+---
+
+## 🛠 Tools & Technologies
+
+### **Development & Execution**
+* **VS Code:** Primary IDE for local script development, modular coding, and version control.
+* **Google Colab:** Utilized for high-performance model training using cloud-based GPU acceleration.
+
+### **Core Frameworks**
+* **Python:** The core programming language.
+* **Keras (TensorFlow):** Used to design, compile, and train the deep learning CNN models.
+* **OpenCV:** The backbone for image preprocessing, handling everything from noise reduction to data augmentation.
+
+### **Data Source**
+* **Kaggle:** The model utilizes high-quality datasets (such as HAM10000 or ISIC) sourced from Kaggle to ensure a diverse range of skin lesion samples for training.
+
+---
+
+## ⚙️ Pipeline Workflow
+
+### 1. Image Preprocessing (OpenCV)
+Before training, raw images are processed to improve feature clarity:
+* **Resize & Crop:** Normalizing images to a consistent input size (e.g., $128 \times 128$ or $224 \times 224$).
+* **Normalization:** Scaling pixel values to a range of $[0, 1]$ for faster gradient convergence.
+* **Noise Reduction:** Applying Gaussian filters to remove artifacts that could mislead the model.
+
+### 2. Feature Extraction (CNN)
+The integrated neural network analyzes the moles through:
+* **Convolutional Layers:** Detecting low-level patterns (edges) and high-level features (asymmetry, texture).
+* **Pooling Layers:** Reducing spatial dimensions to focus on the most critical visual data.
+* **Dense Layers:** Mapping extracted features to specific diagnostic categories.
+
+
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Python 3.x
+* Kaggle API Key (to download datasets)
+
+### Installation
+1.  **Clone the repo:**
+    ```bash
+    git clone [https://github.com/yourusername/skin-cancer-cnn.git](https://github.com/yourusername/skin-cancer-cnn.git)
+    cd skin-cancer-cnn
+    ```
+2.  **Install requirements:**
+    ```bash
+    pip install tensorflow opencv-python matplotlib pandas numpy
+    ```
+
+---
+
+## 📚 References
+* **Keras Documentation:** [Official Site](https://keras.io/)
+* **OpenCV Tutorials:** [Official Site](https://docs.opencv.org/)
+* **Kaggle Dataset:** [Skin Cancer MNIST: HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
+
+---
+
+## ⚠️ Medical Disclaimer
+This software is a **prototype** for educational and research purposes. It is not a medical device and should not be used for self-diagnosis. Always consult a licensed dermatologist for medical concerns.
