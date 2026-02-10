@@ -1,4 +1,4 @@
-# Skin Cancer Detection using CNN & OpenCV
+# Skin Cancer Detection
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Keras](https://img.shields.io/badge/Keras-2.0%20+-red)
@@ -8,7 +8,8 @@
 ## 📋 Overview
 This project develops an automated image classification pipeline to assist in the identification of skin cancer. By utilizing a **Convolutional Neural Network (CNN)**, the system analyzes dermatoscopic images of moles to extract visual features—such as border irregularity and color variegation—indicative of potential malignancy.
 
-
+## ⚠️ Medical Disclaimer
+This software is a **prototype** for educational and research purposes. It is not a medical device and should not be used for self-diagnosis. Always consult a licensed dermatologist for medical concerns.
 
 ---
 
@@ -71,6 +72,3 @@ The integrated neural network analyzes the moles through:
 * **Kaggle Dataset:** [Skin Cancer MNIST: HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
 
 ---
-
-## ⚠️ Medical Disclaimer
-This software is a **prototype** for educational and research purposes. It is not a medical device and should not be used for self-diagnosis. Always consult a licensed dermatologist for medical concerns.
